@@ -1,4 +1,4 @@
-namespace src.Endpoints
+namespace BugStore.Endpoints
 {
     public static class ProductEndpoints
     {
