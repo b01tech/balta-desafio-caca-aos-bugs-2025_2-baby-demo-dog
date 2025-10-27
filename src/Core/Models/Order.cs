@@ -27,6 +27,12 @@ public class Order
         Lines.AddRange(lines);
         UpdatedAt = DateTime.UtcNow;
     }
+    
+    public void SetUpdatedAt()
+    {
+        UpdatedAt = DateTime.UtcNow;
+    }
+    
     public void AddLine(OrderLine line)
     {
         Lines.Add(line);
