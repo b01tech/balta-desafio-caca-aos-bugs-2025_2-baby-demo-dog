@@ -1,5 +1,5 @@
 using DotNetEnv;
-using src.Extensions;
+using BugStore.Infra.Extensions;
 Env.Load();
 var builder = WebApplication.CreateBuilder(args);
 
