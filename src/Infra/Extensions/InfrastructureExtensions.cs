@@ -2,6 +2,7 @@ using BugStore.Core.Interfaces;
 using BugStore.Infra.Data;
 using BugStore.Infra.Repositories;
 using BugStore.Application.Handlers.Customers;
+using BugStore.Application.Handlers.Products;
 using Microsoft.EntityFrameworkCore;
 
 namespace BugStore.Infra.Extensions
@@ -33,6 +34,7 @@ namespace BugStore.Infra.Extensions
         private static void AddHandlers(IServiceCollection services)
         {
             services.AddScoped<BugStore.Application.Handlers.Customers.Handler>();
+            services.AddScoped<BugStore.Application.Handlers.Products.Handler>();
         }
     }
 }
