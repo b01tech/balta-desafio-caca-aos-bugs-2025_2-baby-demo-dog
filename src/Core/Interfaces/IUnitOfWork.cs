@@ -1,4 +1,4 @@
-namespace src.Core.Interfaces
+namespace BugStore.Core.Interfaces
 {
     public interface IUnitOfWork
     {
