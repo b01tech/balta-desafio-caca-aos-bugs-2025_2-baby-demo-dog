@@ -3,6 +3,7 @@ using BugStore.Infra.Data;
 using BugStore.Infra.Repositories;
 using BugStore.Application.Handlers.Customers;
 using BugStore.Application.Handlers.Products;
+using BugStore.Application.Handlers.Orders;
 using Microsoft.EntityFrameworkCore;
 
 namespace BugStore.Infra.Extensions
@@ -35,6 +36,7 @@ namespace BugStore.Infra.Extensions
         {
             services.AddScoped<BugStore.Application.Handlers.Customers.Handler>();
             services.AddScoped<BugStore.Application.Handlers.Products.Handler>();
+            services.AddScoped<BugStore.Application.Handlers.Orders.Handler>();
         }
     }
 }
