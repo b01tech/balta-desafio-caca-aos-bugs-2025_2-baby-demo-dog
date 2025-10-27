@@ -22,6 +22,9 @@ namespace BugStore.Infra.Repositories
         public async Task<IEnumerable<Order>> GetAllAsync(int page, int pageSize)
         {
             return await _context.Orders
+                .Include(o => o.Customer)
+                .Include(o => o.Lines)
+                    .ThenInclude(l => l.Product)
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
@@ -30,6 +33,9 @@ namespace BugStore.Infra.Repositories
         public async Task<IEnumerable<Order>> GetByCustomerIdAsync(Guid customerId)
         {
             return await _context.Orders
+                .Include(o => o.Customer)
+                .Include(o => o.Lines)
+                    .ThenInclude(l => l.Product)
                 .Where(o => o.CustomerId == customerId)
                 .ToListAsync();
         }
@@ -37,7 +43,9 @@ namespace BugStore.Infra.Repositories
         public async Task<Order?> GetWithOrderLinesAsync(Guid id)
         {
             return await _context.Orders
+                .Include(o => o.Customer)
                 .Include(o => o.Lines)
+                    .ThenInclude(l => l.Product)
                 .FirstOrDefaultAsync(o => o.Id == id);
         }
 
